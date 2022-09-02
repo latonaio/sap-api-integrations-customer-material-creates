@@ -8,7 +8,7 @@
 		"SalesOrganization":"1010",              
 		"DistributionChannel":"10",             
 		"Material":"FG012",                          
-		"MaterialByCustomer":"",                
+		"MaterialByCustomer":"A1G-0001",                
 		"MaterialDescriptionByCustomer":"",     
 		"Plant":"",                             
 		"DeliveryPriority":"",                  
@@ -24,9 +24,8 @@
 		"SalesQtyToBaseQtyDnmntr":"",           
 		"SalesQtyToBaseQtyNmrtr":""            
 	},
-	"api_schema": "sap.s4.beh.customermaterial.v1.CustomerMaterial.Created.v1",
+	"api_schema": "SAPCustomerMaterialCreates",
 	"accepter": ["CustomerMaterial"],
 	"customer_code": "10100001",
 	"deleted": false
 }
-

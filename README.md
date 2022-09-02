@@ -37,7 +37,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ここでは、"CustomerMaterial" が指定されています。    
   
 ```
-	"api_schema": "sap.s4.beh.customermaterial.v1.CustomerMaterial.Created.v1",
+	"api_schema": "SAPCustomerMaterialCreates",
 	"accepter": ["CustomerMaterial"],
 	"customer_code": "10100001",
 	"deleted": false
@@ -48,7 +48,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 全データを登録する場合、sample.json は以下のように記載します。  
 
 ```
-	"api_schema": "sap.s4.beh.customermaterial.v1.CustomerMaterial.Created.v1",
+	"api_schema": "SAPCustomerMaterialCreates",
 	"accepter": ["All"],
 	"customer_code": "10100001",
 	"deleted": false
@@ -87,7 +87,7 @@ func (c *SAPAPICaller) AsyncPostCustomerMaterial(
 
 ```
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-customer-material-reads/SAP_API_Caller/caller.go#L52",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-customer-material-creates/SAP_API_Caller/caller.go#L52",
 	"function": "sap-api-integrations-customer-material-reads/SAP_API_Caller.(*SAPAPICaller).CustomerMaterial",
 	"level": "INFO",
 	"message": [
