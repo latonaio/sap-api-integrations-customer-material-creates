@@ -10,21 +10,21 @@ import (
 	"sync"
 
 	"github.com/latonaio/golang-logging-library-for-sap/logger"
-	sap_api_post_header_setup "github.com/latonaio/sap-api-post-header-setup"
+	sap_api_request_client_header_setup "github.com/latonaio/sap-api-request-client-header-setup"
 	"golang.org/x/xerrors"
 )
 
 type SAPAPICaller struct {
 	baseURL         string
 	sapClientNumber string
-	postClient      *sap_api_post_header_setup.SAPPostClient
+	requestClient   *sap_api_request_client_header_setup.SAPRequestClient
 	log             *logger.Logger
 }
 
-func NewSAPAPICaller(baseUrl, sapClientNumber string, postClient *sap_api_post_header_setup.SAPPostClient, l *logger.Logger) *SAPAPICaller {
+func NewSAPAPICaller(baseUrl, sapClientNumber string, requestClient *sap_api_request_client_header_setup.SAPRequestClient, l *logger.Logger) *SAPAPICaller {
 	return &SAPAPICaller{
 		baseURL:         baseUrl,
-		postClient:      postClient,
+		requestClient:   requestClient,
 		sapClientNumber: sapClientNumber,
 		log:             l,
 	}
@@ -66,7 +66,7 @@ func (c *SAPAPICaller) callCustomerMaterialSrvAPIRequirementCustomerMaterial(api
 	}
 	url := strings.Join([]string{c.baseURL, "API_CUSTOMER_MATERIAL_SRV", api}, "/")
 	params := c.addQuerySAPClient(map[string]string{})
-	resp, err := c.postClient.POST(url, params, string(body))
+	resp, err := c.requestClient.Request("POST", url, params, string(body))
 	if err != nil {
 		return nil, xerrors.Errorf("API request error: %w", err)
 	}

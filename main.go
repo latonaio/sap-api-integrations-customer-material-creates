@@ -6,7 +6,7 @@ import (
 	"sap-api-integrations-customer-material-creates/config"
 
 	"github.com/latonaio/golang-logging-library-for-sap/logger"
-	sap_api_post_header_setup "github.com/latonaio/sap-api-post-header-setup"
+	sap_api_request_client_header_setup "github.com/latonaio/sap-api-request-client-header-setup"
 	sap_api_time_value_converter "github.com/latonaio/sap-api-time-value-converter"
 )
 
@@ -14,7 +14,7 @@ func main() {
 	l := logger.NewLogger()
 	conf := config.NewConf()
 	fr := sap_api_input_reader.NewFileReader()
-	pc := sap_api_post_header_setup.NewSAPPostClientWithOption(conf.SAP)
+	pc := sap_api_request_client_header_setup.NewSAPRequestClientWithOption(conf.SAP)
 	caller := sap_api_caller.NewSAPAPICaller(
 		conf.SAP.BaseURL(),
 		"100",
